@@ -8,6 +8,11 @@ env_file:
 config:
   webroot: web
   php: '8.0'
+  via: nginx:1.18
+
+proxy:
+  appserver_nginx:
+    - debugging-xdebug-lando.com
 
 services:
   appserver:
