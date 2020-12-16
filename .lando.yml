@@ -1,0 +1,22 @@
+name: debugging_xdebug_lando
+
+recipe: drupal8
+
+env_file:
+  - .env
+
+config:
+  webroot: web
+  php: '8.0'
+
+services:
+  appserver:
+    composer_version: '1.10.17'
+    xdebug: true
+  database:
+    type: mariadb:10.2
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+    scanner: false
